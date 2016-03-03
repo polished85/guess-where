@@ -1,0 +1,31 @@
+
+<template name="nav">
+    <nav id="nav" class="{{ navState }}">
+        <button id="closeNav" class="navbar-close">
+            <i class="fa fa-close"></i>
+        </button>
+        <div class="nav-menu">
+            {{ #if loggedIn }}
+            <h6>Games</h6>
+            <ul class="nav">
+                <li class="nav-item"><a class="nav-link" href="/">dashboard</a></li>
+                <li class="nav-item"><a class="nav-link" href="/challenges">challenges</a></li>
+                <li class="nav-item"><a class="nav-link" href="/my-game">active game</a></li>
+            </ul>
+            <h6>Account</h6>
+            <ul class="nav">
+                <li class="nav-item"><a class="nav-link" href="/change-password">change password</a></li>
+                <li class="nav-item"><a class="nav-link" href="/profile">profile</a></li>
+                <li class="nav-item"><a class="nav-link" href="/sign-out">sign out</a></li>
+            </ul>
+            {{ else }}
+            <ul class="nav">
+                <li class="nav-item"><a class="nav-link" href="/sign-in">Sign in</a></li>
+                <li class="nav-item"><a class="nav-link" href="/sign-up">Sign up</a></li>
+                <li class="nav-item"><a class="nav-link" href="/forgot-password">Forgot password?</a></li>
+                <li class="nav-item"><a class="nav-link" href="/send-again">Resend verification email</a></li>
+            </ul>
+            {{ /if }}
+        </div>
+    </nav>
+</template>

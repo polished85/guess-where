@@ -1,0 +1,28 @@
+.header {
+	margin-bottom: 1.5rem;
+	#goBack {
+		cursor: pointer;
+		color: #0275d8;
+	}
+	.navbar {
+		.navbar-brand {
+			> a {
+
+				&:hover,
+				&:focus,
+				&:active {
+					color: lighten(#0275d8, 7.5%);
+					text-decoration: none;
+				}
+			}
+		}
+		.nav-link {
+			color: #0275d8;
+			&:hover,
+			&:focus,
+			&:active {
+				color: lighten(#0275d8, 15%);
+			}
+		}
+	}
+}

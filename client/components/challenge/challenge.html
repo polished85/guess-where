@@ -1,0 +1,115 @@
+<template name="challenge">
+
+	<section id="challenge" class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12">
+				<h2>Challenge</h2>
+
+				{{ #if game }}
+					<figure class="challenge-points">{{ game.score }}</figure>
+					<img class="challenge-image" src="{{ game.image }}" />
+					  <button type="button" id="clue" data-index="{{game.clueCount}}" class="btn btn-primary btn-block">Clue</button>
+
+					  <hr/>
+
+					<div class="input-group guess-group">
+					  <input type="text" class="form-control" id="guess" placeholder="enter tour guess&hellip;">
+					  <span class="input-group-addon" style="padding: 0;">
+					  	<button type="button" id="guess-btn" class="btn btn-primary">Guess</button>
+					  </span>
+					</div>
+
+<!-- 					<input id="guess" type="text" placeholder="enter a guess&hellip;"/>
+					<button type="button" id="guess-btn" class="btn btn-primary">Guess</button> -->
+
+					<ul class="list-group clues-list clearfix">
+					{{ #each game.clues}}
+						{{ #if active}}
+						<li class="list-group-item">
+							{{ clue }}
+						</li>
+						{{ /if }}
+					{{ /each }}
+					</ul>
+				{{ /if }}
+
+
+
+				<!-- {{ #if game }}
+
+					<div class="row">
+						<img class="game-image" src="{{ game.image }}" />
+					</div>
+
+					<ul class="list-inline text-center game-stats">
+						<li>score <span class="label label-pill label-primary">{{ game.score }}</span></li>
+						<li>guesses <span class="label label-pill label-primary">{{ game.guessCount }}</span></li>
+						<li>clues <span class="label label-pill label-primary">{{ game.clueCount }}</span></li>
+					</ul>
+
+					{{ #if game.active }}
+					<div class="guess-wrap clearfix">
+						<textarea id="guessText" class="form-control guess-text" placeholder="Enter your guess&hellip;"></textarea>
+						<button id="guessButton" class="btn btn-primary-outline btn-block guess-button">Guess
+						<i class="fa fa-question-circle"></i>
+						</button>
+					</div>
+					{{ /if }}
+
+					<ul class="list-group">
+						{{ #each game.guesses }}
+						<li class="list-group-item">
+							{{ #if this.active }}
+
+								{{ #if this.graded }}
+									{{ this.guess }} <i class="fa fa-close pull-right"></i>
+								{{ else }}
+									{{ this.guess}} <i class="fa fa-spinner fa-spin pull-right"></i>
+								{{ /if }}
+
+							{{ else }}
+
+								{{ #if this.graded }}
+									{{ this.guess }} <i class="fa fa-check pull-right"></i>
+								{{ else }}
+									<div class="empty-guess"></div>
+								{{ /if }}
+
+							{{ /if }}
+						</li>
+						{{ /each }}
+					</ul>
+
+
+					<h5>Clues</h5>
+					<ul id="gameClues" class="list-group">
+						{{ #each game.clues }}
+					  <li class="list-group-item clearfix">
+					  	{{ #if game.active}}
+					  	{{ #unless this.active }}
+					  	<button type="button" class="reveal-item-text">
+					    	<i class="fa fa-eye"></i>
+					    </button>
+					    {{ /unless }}
+					    {{ /if }}
+					    <span class="list-group-item-text {{#if this.active}}clue-revealed{{/if}} {{#unless game.active}}clue-revealed{{/unless}}">{{ this.clue }}</span>
+					  </li>
+					  {{ /each }}
+					</ul>
+
+			    {{ else }}
+			    <div class="container empty-list">
+			    	<h2>This game no longer exists&hellip;</h2>
+			    	<button class="btn btn-secondary-outline btn-sm" type="button">
+			    		<i class="fa fa-search-plus"></i> check archives
+			    	</button>
+			    	<button class="btn btn-secondary-outline btn-sm" type="button">
+			    		<i class="fa fa-question"></i> check available games
+			    	</button>
+			    </div>
+			    {{ /if }} -->
+
+			</div>
+		</div>
+	</section>
+</template>

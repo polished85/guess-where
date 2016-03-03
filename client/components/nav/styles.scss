@@ -1,0 +1,104 @@
+/* styles for nav template ------------- */
+/* ------------------------------------- */
+#nav {
+    background: #f7f7f9;
+    border-right: 1px solid #eee;
+    position: fixed;
+    width: 300px;
+    top: 0;
+    left: -300px;
+    bottom: 0;
+    z-index: 10;
+    overflow: auto;
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+
+    &.open {
+        -webkit-transform: translate3d(300px, 0, 0);
+        -moz-transform: translate3d(300px, 0, 0);
+        -o-transform: translate3d(300px, 0, 0);
+        -ms-transform: translate3d(300px, 0, 0);
+        transform: translate3d(300px, 0, 0);
+    }
+
+    .navbar-close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0;
+        float: right;
+        margin: 0;
+        font-size: 20px;
+        border: 0;
+        color: #337ab7;
+        background: transparent;
+        &:hover,
+        &:focus,
+        &:active {
+            outline: 0;
+        }
+        > .fa {
+            padding: 15px;
+        }
+    }
+    .nav-menu {
+        padding: 45px 15px 15px;
+        > .nav {
+            padding: 0 0 7.5px;
+            margin-bottom: 30px;
+
+            &:last-of-type {
+              border-bottom: 0;
+            }
+            > .nav-item {
+                position: relative;
+                margin-right: 0;
+                padding: 0;
+                border-top: 1px solid #fff;
+                border-bottom: 1px solid #eee;
+
+                &:first-child {
+                  border-top: 0;
+                }
+                &:last-child {
+                  border-bottom: 0;
+                }
+                &:after {
+                    display: inline-block;
+                    font: normal normal normal 14px/1 FontAwesome;
+                    font-size: 25px;
+                    text-rendering: auto;
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
+                    transform: translate(0, 0);
+
+                    position: absolute;
+                    right: 0;
+                    top: 10px;
+                    color: #337ab7;
+                    content: "\f105";
+                    z-index: -1;
+                }
+
+                > .nav-link {
+                  display: block;
+                  color: #777;
+                  font-weight: 300;
+                  padding: 15px 15px 15px 0;
+                  &:hover,
+                  &:focus,
+                  &:active {
+                    text-decoration: none;
+                    color: lighten(#555, 15%);
+                  }
+                }
+            }
+        }
+    }
+
+    > .fa-close {
+
+    }
+}

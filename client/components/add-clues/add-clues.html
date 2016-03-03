@@ -1,0 +1,22 @@
+
+<template name="add_clues">
+	<section id="add-clues" class="container-fluid">
+		<h2>Enter 3 Clues</h2>
+		<img src="{{ image }}" />
+
+		<ul class="list-unstyled clues-list">
+			<li>
+				<input id="first-clue" type="text" class="form-control" placeholder="1st clue">
+			</li>
+			<li>
+				<input id="second-clue" type="text" class="form-control" placeholder="2nd clue">
+			</li>
+			<li>
+				<input id="third-clue" type="text" class="form-control" placeholder="3rd clue">
+			</li>
+		</ul>
+		<button type="button" id="send-game" class="btn btn-primary btn-block">
+			Send <i class="fa fa-chevron-circle-right"></i>
+		</button>
+	</section>
+</template>

@@ -1,0 +1,67 @@
+<template name="challenges">
+	<section id="challenges" class="container">
+		<h2>Challenges</h2>
+		
+			{{ #if games.count }}
+				<ul class="list-group">
+					{{ #each games }}
+					<li class="list-group-item">
+						<a href="challenge/{{_id}}"><img src="{{ image }}" /></a>
+					</li>
+					{{ /each }}
+				</ul>
+				
+			{{ else }}
+				<p class="lead">No challanges available&hellip;</p>
+				<div class="text-center">
+					<i class="fa fa-5x fa-spinner fa-spin"></i>
+				</div>
+			{{ /if }}
+		
+
+
+		
+		<!-- <ul id="gamesFilterState" class="list-inline">
+	    <li><input value="true" type="radio" name="game_state" checked> open</li>
+	    <li><input value="false" type="radio" name="game_state"> archived</li>
+		</ul>
+		
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-sm-offset-3">
+				{{ #if loggedIn }}
+
+					{{ #if games.count }}
+					{{#each games}}
+					<div class="card">
+						<img class="card-img-top" src="{{ image }}" />
+					  <ul class="list-group list-group-flush">
+							<li class="list-group-item">{{ author }}</li>
+							<li class="list-group-item">
+								score <span class="label label-pill label-primary">{{ score }}</span>
+							</li>
+							<li class="list-group-item">
+								<time class="created-on">{{ formatDate createdBy }}</time>
+							</li>
+						</ul>
+					  <div class="card-block clearfix">
+							<a class="btn btn-success-outline view-game pull-right" href="games/{{_id}}">
+								view <i class="fa fa-chevron-circle-right"></i>
+							</a>
+					  </div>
+					</div>
+					{{/each}}
+
+					{{ else }}
+					<h5>No games are available&hellip;</h5>
+					{{ /if }}
+
+				{{ else }}
+				<div class="account-view">
+					{{> atForm state='signUp'}}
+				</div>
+
+				{{ /if }}
+			</div>
+		</div> -->
+	</section>
+</template>

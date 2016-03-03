@@ -1,0 +1,24 @@
+
+<template name="my_game">
+	<section id="my-game" class="container-fluid">
+		<h2>My Game</h2>
+		{{ #if game.guesses }}
+			<ul class="list-group">
+			{{ #each game.guesses}}
+				<li class="list-group-item">
+					{{ guess }} 
+					<div class="btn-group pull-right" role="group">
+					  <button type="button" class="btn btn-xs btn-danger"><i class="fa fa-close"></i></button>
+					  <button type="button" class="btn btn-xs btn-success"><i class="fa fa-check"></i></button>
+					</div>
+				</li>
+			{{ /each }}
+			</ul>
+		{{ else }}
+			<p class="lead">Challenge Sent! Sit back, relax and wait for guesses&hellip;</p>
+			<div class="text-center">
+			<i class="fa fa-5x fa-spinner fa-spin"></i>
+			</div>
+		{{ /if }}
+	</section>
+</template>
